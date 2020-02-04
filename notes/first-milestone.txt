@@ -1,0 +1,14 @@
+First milestone:
+look at hubspot, sendgrid, zapier, mailchimp apis
+how to get test account
+what kind of auth is required
+are there existing node modules (don’t use but check)
+what api calls will I use
+how will I register callbacks
+what data fields will come from/go to apis (what am I receiving/sending)
+write out mapping of data fields
+workflow in terms of api calls
+make up use cases
+ex. create a contact in mail chimp and add to a list
+sendgrid: send email to this email
+zapier: trigger an action or workflow

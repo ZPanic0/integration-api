@@ -1,0 +1,9 @@
+Used for dispatching emails to individuals.
+
+- Has an API, but also supports SMTP (!)
+- Uses an API key in the header for authentication
+
+Authentication Documentation
+https://sendgrid.com/docs/API_Reference/Web_API_v3/How_To_Use_The_Web_API_v3/authentication.html
+NodeJS Module
+https://github.com/sendgrid/sendgrid-nodejs

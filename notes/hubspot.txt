@@ -1,0 +1,22 @@
+- Uses OAuth or API
+-- Recommends OAuth for security
+-- Setting up OAuth: https://developers.hubspot.com/docs/methods/oauth2/oauth2-quickstart#step1directtohubspotsoauth20server
+- Test accounts can be made from Developer Home -> Manage test accounts
+- node module: https://www.npmjs.com/package/hubspot
+
+Can use webhook to get contact created notification
+-- Create an app
+-- Add required scope
+--- Settings -> Auth -> Scopes -> Contacts
+-- Webhooks
+-- Set target URL to endpoint to notify
+-- Create subscription
+--- Object type -> 'Contact', listen for -> 'Created'
+-- Example result: [{"eventId":"100","subscriptionId":217957,"portalId":7075784,"occurredAt":1580316962853,"subscriptionType":"contact.creation","attemptNumber":0,"objectId":123,"changeSource":"CRM","changeFlag":"NEW"}]
+
+Alternatively, PUT to https://api.hubapi.com/webhooks/v1/{appId}/settings
+with a request body containing webhookUrl and maxConcurrentRequests
+
+https://developers.hubspot.com/docs/methods/webhooks/webhooks-overview
+
+According to the documentation, the objectId in the webhook should be the vid required for fetching details on a single contact.

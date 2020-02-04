@@ -1,0 +1,4 @@
+Trigger based event firing. Similar to IFTTT
+
+Can notify Zapier of a newly available service via their CLI module
+https://platform.zapier.com/cli_docs/docs
