@@ -14,8 +14,87 @@
 - [Mailchimp](https://www.npmjs.com/package/mailchimp-api-v3)
 - [SendGrid](https://github.com/sendgrid/sendgrid-nodejs)
 #### What API calls will I use?
+- Fetching contact from Hubspot
+*vid is the objectId pushed from the Hubspot's webhook*
+```
+GET /contacts/v1/contact/vid/:vid/profile
+```
+- Adding member to Mailchimp
+```
+POST https://usX.api.mailchimp.com/3.0/lists/{list_id}/members
+```
+Example request body:
+```
+{
+    "email_address": "address@example.com",
+    "status": "subscribed",
+    "tags": ["short", "stout"]
+}
+```
+Full list endpoint documentation [here](https://mailchimp.com/developer/reference/lists/list-members/)
+- Sending email with SendGrid
+*Header must contain Authorization of type Bearer containing API key*
+```
+POST https://api.sendgrid.com/v3/mail/send
+```
+Example request body:
+```
+{
+  "personalizations": [
+    {
+      "to": [
+        {
+          "email": "john@example.com"
+        }
+      ],
+      "subject": "Hello, World!"
+    }
+  ],
+  "from": {
+    "email": "from_address@example.com"
+  },
+  "content": [
+    {
+      "type": "text/plain",
+      "value": "Hello, World!"
+    }
+  ]
+}
+```
 #### How will I register callbacks?
+##### Registering webhook in Hubspot
+
+Endpoint:
+```
+POST https://api.hubapi.com/webhooks/v1/{appId}/subscriptions
+```
+Example request body:
+```
+{
+  "subscriptionDetails": {
+    "subscriptionType": "company.propertyChange",
+    "propertyName": "companyname"
+  },
+  "enabled": false
+}
+```
 #### What data fields will come from/go to APIs (what am I receiving/sending)
+- Hubspot webhook test fire result
+```
+[
+    {
+        "eventId":"100",
+        "subscriptionId":217957,
+        "portalId":7075784,
+        "occurredAt":1580316962853,
+        "subscriptionType":"contact.creation",
+        "attemptNumber":0,
+        "objectId":123,
+        "changeSource":"CRM",
+        "changeFlag":"NEW"
+    }
+]
+```
 #### Write out mapping of data fields
 #### Workflow in terms of API calls
 #### Make up use cases
