@@ -2,8 +2,11 @@
   "name": "integration-api",
   "description": "An app for automatically creating contacts in mailchimp when created in hubspot",
   "main": "index.js",
+  "engines": {
+    "node": "13.x"
+  },
   "scripts": {
-    "start": "node index.js"
+    "start": "node -r esm index.js"
   },
   "repository": {
     "type": "git",
@@ -12,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/ZPanic0/integration-api/issues"
   },
-  "homepage": "https://github.com/ZPanic0/integration-api"
+  "homepage": "https://github.com/ZPanic0/integration-api",
+  "dependencies": {
+    "apollo-server-express": "^2.9.16",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "graphql": "^14.6.0"
+  }
 }
