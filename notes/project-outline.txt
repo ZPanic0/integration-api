@@ -5,11 +5,9 @@ Every time contact is created in hubspot, send to mail chimp
 Add to specific mail chimp list
 Store in db
 Build Gui to display contacts that have been moved from hubspot to mail chimp
-Axios to send api call to mail chimp
+Apollo GraphQL for backend
 Web hook register to hubspot
 sendgrid
 zapier
 optional: configurable from Gui
-Using koa
-Live updating with websockets
 Front end react with react hooks
