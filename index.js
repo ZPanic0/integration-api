@@ -7,6 +7,7 @@ import resolvers from './resolvers'
 import endpoints from './endpoints'
 import client from './utilities/mongoClient'
 import HubSpotAPI from './datasources/hubspot'
+import { getToken } from './utilities/keyStore'
 
 const port = env.PORT
 
@@ -26,8 +27,9 @@ const server = new ApolloServer({
   },
   resolvers,
   context: async () => {
-    //TODO: check if token is still valid, renew and continue if not
-    return await client.getOAuthCredentials('default') //TODO: Add caching
+    return {
+      hubspot: await getToken('default', 'hubspot')
+    }
   }
 })
 
