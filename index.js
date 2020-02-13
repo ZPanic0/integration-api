@@ -1,10 +1,11 @@
 import express from 'express'
-import { ApolloServer, gql } from 'apollo-server-express'
+import { ApolloServer } from 'apollo-server-express'
 import path from 'path'
-import env from './envInit'
+import env from './utilities/envInit'
 import typeDefs from './schema'
 import resolvers from './resolvers'
 import endpoints from './endpoints'
+import client from './utilities/mongoClient'
 
 const port = env.PORT
 

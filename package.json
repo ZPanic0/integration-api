@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/ZPanic0/integration-api",
   "dependencies": {
+    "apollo-datasource-rest": "^0.7.0",
     "apollo-server-express": "^2.9.16",
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "graphql": "^14.6.0",
-    "request": "^2.88.0"
+    "moment": "^2.24.0",
+    "mongodb": "^3.5.3"
   }
 }
