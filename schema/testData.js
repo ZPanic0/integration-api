@@ -1,10 +1,12 @@
-export default `
+const queries = `
+books: [Book]
+`
+
+const types = `
 type Book {
   title: String
   author: String
 }
-
-type Query {
-  books: [Book]
-}
 `
+
+export default { queries, types }
