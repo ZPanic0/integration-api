@@ -9,7 +9,7 @@ export default class HubSpotAPI extends RESTDataSource {
     }
 
     willSendRequest(request) {
-        request.headers.set('Authorization', `Bearer ${this.context.hubspot.accessToken}`)
+        request.headers.set('Authorization', `Bearer ${this.context.hubspot}`)
     }
 
     async getAllContacts() {
@@ -26,7 +26,7 @@ export default class HubSpotAPI extends RESTDataSource {
             for (let prop in returnObject.properties) {
                 returnObject.properties[prop] = returnObject.properties[prop].value
             }
-            
+
             return returnObject
         })
 

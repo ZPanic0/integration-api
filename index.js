@@ -5,7 +5,6 @@ import env from './utilities/envInit'
 import typeDefs from './schema'
 import resolvers from './resolvers'
 import endpoints from './endpoints'
-import client from './utilities/mongoClient'
 import HubSpotAPI from './datasources/hubspot'
 import { getToken } from './utilities/keyStore'
 
